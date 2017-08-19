@@ -32,7 +32,7 @@ class Commands extends PluginBase implements CommandExecutor{
         $this->plugin = $plugin;
     }
     
-    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool{
+    public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) {
     	switch(strtolower($cmd->getName())){
     			case "broadcaster":
     				if(isset($args[0])){
@@ -51,7 +51,7 @@ class Commands extends PluginBase implements CommandExecutor{
     			   				return true;
     			   			}
     			   			else{
-    			   				$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+    			   				$sender->sendMessage($this->plugin->translateColors("&", "&cNot showing command due to self-leak information."));
     			   				return true;
     			   			}
     			   		}
@@ -62,7 +62,7 @@ class Commands extends PluginBase implements CommandExecutor{
     			   				return true;
     			   			}
     			   			else{
-    			   				$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+    			   				$sender->sendMessage($this->plugin->translateColors("&", "&cNot showing command due to self-leak information."));
     			   				return true;
     			   			}
     			   		}else{
@@ -71,7 +71,7 @@ class Commands extends PluginBase implements CommandExecutor{
     			   				break;
     			   			}
     			   			else{
-    			   				$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+    			   				$sender->sendMessage($this->plugin->translateColors("&", "&cNot showing command due to self-leak information."));
     			   				break;
     			   			}
     			   			return true;
@@ -86,7 +86,7 @@ class Commands extends PluginBase implements CommandExecutor{
     			   			$sender->sendMessage($this->plugin->translateColors("&", "&9/sendpopup &2- &9Send popup to the specified player (* for all players)"));
     			   			break;
     			   		}else{
-    			   			$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+    			   			$sender->sendMessage($this->plugin->translateColors("&", "&cNot showing command due to self-leak information."));
     			   			break;
     			   			}
     			   		return true;
