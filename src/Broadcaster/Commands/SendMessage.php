@@ -29,7 +29,7 @@ class SendMessage extends PluginBase implements CommandExecutor{
         $this->plugin = $plugin;
     }
     
-    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool{
+    public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) {
     	switch(strtolower($cmd->getName())){
     			case "sendmessage":
     				$this->temp = $this->plugin->getConfig()->getAll();
@@ -65,7 +65,7 @@ class SendMessage extends PluginBase implements CommandExecutor{
     						$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&cUsage: /sm <player> <message>"));
     					}
     				}else{
-    					$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+    					$sender->sendMessage($this->plugin->translateColors("&", "&cNot showing command due to self-leak information."));
     					return true;
     				}
 				break;
